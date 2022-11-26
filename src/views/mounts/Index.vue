@@ -1,14 +1,27 @@
 <template>
   <v-container fluid>
     <v-col>
-
+      
     </v-col>
   </v-container>
 </template>
 
 <script>
+import {ref} from 'vue';
 export default {
+  setup() {
+    const mountList = ref([
+      {
+        id: 1,
+        image : '../../assets/images/mounts/000001.png',
+        name: "test",
+      }
+    ]);
 
+    return {
+      mountList,
+    }
+  }
 }
 </script>
 
