@@ -1,7 +1,11 @@
 <template>
   <v-container fluid>
     <v-col>
-      
+      <v-list>
+        <v-row v-for="(item, index) in mountList" :key="index">
+          {{item.name}}
+        </v-row>
+      </v-list>
     </v-col>
   </v-container>
 </template>
