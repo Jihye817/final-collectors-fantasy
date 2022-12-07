@@ -7,7 +7,24 @@
     @click="onClick"></v-btn>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer">
-
+    <v-list>
+      <v-list-item link>
+        <v-list-item-icon>
+          <v-icon>mdi-image</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          mounts
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link>
+        <v-list-item-icon>
+          <v-icon>mdi-image</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          tests
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 </template>
 

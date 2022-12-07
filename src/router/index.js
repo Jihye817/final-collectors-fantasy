@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MountList from '../views/mounts/Index.vue';
+import MountDetail from '../views/mounts/Detail.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'MountList',
       component: MountList,
+    },
+    {
+      path: '/detail',
+      name: 'MountDetail',
+      component: MountDetail,
     }
   ]
 });
