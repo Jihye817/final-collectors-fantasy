@@ -1,10 +1,15 @@
 <template>
-  <v-app-bar :elevation="0" :color="theme == 'light' ? 'grey-lighten-3' : 'black'" >
+  <v-app-bar :elevation="0" >
     <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
     navbar test
-    <v-spacer></v-spacer>
-    <v-btn variant="tonal" :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
-    @click="onClick"></v-btn>
+    <v-row align="center" justify="end">
+      <v-spacer></v-spacer>
+      <v-col class="mr-3" cols="auto">
+        <v-btn @click="toggleTheme" variant="tonal"
+          :icon="theme.global.name.value === 'light' ? 'mdi-weather-night' : 'mdi-weather-sunny'">
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer">
     <v-list>
@@ -30,22 +35,17 @@
 
 <script>
 import {ref} from 'vue';
+import {useTheme} from 'vuetify';
 
 export default {
-  emits: ["toggle-theme"],
-  setup(props, { emit }) {
+  setup() {
     const drawer = ref(true);
-    const theme = ref('light');
-
-    const onClick = () => {
-      theme.value = theme.value === 'light' ? 'dark' : 'light';
-      emit('toggle-theme');
-    }
+    const theme = useTheme();
 
     return {
       drawer,
       theme,
-      onClick,
+      toggleTheme: () => theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
     }
   }
 }
