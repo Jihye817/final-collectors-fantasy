@@ -9,6 +9,8 @@
 
 <script>
 import Navbar from "@/components/layout/Navbar.vue";
+import {onMounted} from 'vue';
+import firebaseApp from './plugins/firebase';
 
 export default {
   name: 'App',
@@ -17,7 +19,7 @@ export default {
     Navbar,
   },
   setup() {
-
+    onMounted(() => console.log(firebaseApp));
     return {
     }
   },

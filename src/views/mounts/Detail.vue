@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="ma-0 pa-0">
     <v-col>
-      <v-row>
+      <v-row class="pl-3" style="height: 3rem; align-items:center; border-bottom:1px solid blue">
         <v-icon @click="routeBack">
           mdi-chevron-left
         </v-icon>
