@@ -44,7 +44,8 @@
 
 <script>
 import {useRouter} from "vue-router";
-import {ref} from 'vue';
+import {ref, onMounted, inject} from 'vue';
+
 export default {
   setup() {
     const router = useRouter();
@@ -115,6 +116,10 @@ export default {
         name: 'MountDetail'
       })
     }
+
+    const firebase = inject('firebase');
+    onMounted(() => console.log(firebase));
+
     return {
       mountList,
       sortTable,
